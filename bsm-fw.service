@@ -1,0 +1,12 @@
+[Unit]
+Description=BSM Directory Monitor Service
+After=network.target
+
+[Service]
+User=vboxuser
+WorkingDirectory=/home/ubuntu/bsm
+ExecStart=/usr/bin/python3 /home/ubuntu/bsm/file_watcher.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
